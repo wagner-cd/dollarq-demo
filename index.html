@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DollarQ Gesture Recognizer Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>$Q Gesture Recognizer</h1>
+            <p class="subtitle">Draw gestures below to see real-time recognition from 16 templates. Add more gestures if you like!</p>
+        </header>
+
+        <div class="demo-section">
+            <div class="canvas-container">
+                <canvas id="drawingCanvas" width="1000" height="600"></canvas>
+                <div class="canvas-controls">
+                    <button id="clearBtn" class="btn btn-secondary">Clear Canvas</button>
+                    <button id="undoBtn" class="btn btn-secondary">Undo Stroke</button>
+                    <button id="trainGestureBtn" class="btn btn-success">Save as New Gesture</button>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="recognition-result">
+                    <h3>Recognition Result</h3>
+                    <div id="resultDisplay" class="result-display">
+                        <span class="no-result">Draw a gesture to see recognition</span>
+                    </div>
+                </div>
+
+                <div class="performance-stats">
+                    <h4>Performance</h4>
+                    <div class="stat">
+                        <span class="stat-label">Processing Time:</span>
+                        <span id="processingTime" class="stat-value">-</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Confidence:</span>
+                        <span id="confidence" class="stat-value">-</span>
+                    </div>
+                </div>
+
+                <div class="gesture-info">
+                    <div class="gesture-header">
+                        <h4>Gesture Library</h4>
+                        <span id="gestureCount" class="gesture-count">11 gestures</span>
+                    </div>
+                    <div id="gestureGrid" class="gesture-grid">
+                        <!-- Gestures will be populated dynamically by JavaScript -->
+                    </div>
+                    <div class="gesture-management">
+                        <button id="resetGesturesBtn" class="btn btn-warning">Reset to Defaults</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>About Enhanced DollarQ Recognition</h3>
+            <p>
+                This demo uses an advanced implementation of the $Q Super-Quick Recognizer with 16 sophisticated 
+                gesture templates including various ellipse ratios, comprehensive directional lines (6 orientations), and geometric shapes. The enhanced version 
+                features improved recognition algorithms, better confidence scoring, and specialized templates 
+                for precise shape detection.
+            </p>
+            <div class="algorithm-features">
+                <div class="feature">
+                    <strong>Advanced Templates:</strong> 16 sophisticated gesture patterns including ultra-precise ellipses and 6-orientation line system
+                </div>
+                <div class="feature">
+                    <strong>Enhanced Algorithms:</strong> Improved point cloud processing and lookup table optimization
+                </div>
+                <div class="feature">
+                    <strong>Professional Confidence:</strong> Sophisticated scoring system for reliable recognition
+                </div>
+                <div class="feature">
+                    <strong>Geometric Precision:</strong> Specialized templates for various aspect ratios (1:1, 7:1, 15:1)
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>
+                Based on the research by Vatavu, R.-D., Anthony, L. and Wobbrock, J.O. (2018). 
+                <em>$Q: A super-quick, articulation-invariant stroke-gesture recognizer for low-resource devices.</em>
+            </p>
+        </footer>
+    </div>
+
+    <script src="enhanced-dollarq.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
